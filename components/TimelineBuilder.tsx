@@ -6,6 +6,14 @@ import { TimelinePoint } from "@/types";
 
 const TimelineBuilder = () => {
   const [points, setPoints] = useState<TimelinePoint[]>([]);
+  const getCurrentDate = () => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+    const day = currentDate.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
   const handleAddTimelinePoint = () => {
     const newPoint: TimelinePoint = {
       id: Date.now().toString(),
@@ -14,6 +22,7 @@ const TimelineBuilder = () => {
       completed: false,
       isCircleClicked: false,
       order: points.length,
+      date: getCurrentDate(),
     };
     setPoints((prevPoints) => [...prevPoints, newPoint]);
   };
@@ -69,16 +78,25 @@ const TimelineBuilder = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row gap-3 items-center justify-center py-4 px-4">
-      <Timeline points={points} toggleCircleClick={handleToggleCircleClick} />
-      <TimelineTabs
-        points={points}
-        addPoint={handleAddTimelinePoint}
-        deletePoint={handleDeletePoint}
-        updatePointTitle={handleUpdatePointTitle}
-        updatePointDescription={handleUpdatePointDescription}
-        updatePointOrder={handleUpdatePointOrder}
-      />
+    <div className="min-h-screen flex flex-col items-center justify-center py-4 px-4">
+      {points.length >= 1 && (
+        <div className="w-full">
+          <Timeline
+            points={points}
+            toggleCircleClick={handleToggleCircleClick}
+          />
+        </div>
+      )}
+      <div className={points.length > 0 ? "w-full" : ""}>
+        <TimelineTabs
+          points={points}
+          addPoint={handleAddTimelinePoint}
+          deletePoint={handleDeletePoint}
+          updatePointTitle={handleUpdatePointTitle}
+          updatePointDescription={handleUpdatePointDescription}
+          updatePointOrder={handleUpdatePointOrder}
+        />
+      </div>
     </div>
   );
 };

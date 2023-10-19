@@ -5,6 +5,7 @@ export interface TimelinePoint {
   completed: boolean;
   isCircleClicked: boolean;
   order: number;
+  date: string;
 }
 export interface TimelineProps {
   points: TimelinePoint[];

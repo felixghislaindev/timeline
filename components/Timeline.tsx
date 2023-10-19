@@ -2,51 +2,40 @@ import { TimelineProps } from "@/types";
 import React from "react";
 
 const Timeline: React.FC<TimelineProps> = ({ points, toggleCircleClick }) => {
+  const lineStyle = {
+    width: `${points.length * 400}px`,
+  };
   return (
-    <div
-      className={`space-y-8 relative before:absolute before:inset-0 before:ml-6 sm:before:ml-9 before:-translate-x-1/2 md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-indigo-500 md:w-3/4 py-4 px-4`}
-    >
-      {points.map((point, index) => (
-        <div
-          key={point.id}
-          className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group `}
-        >
-          <div
-            className={`flex items-center justify-center w-10 h-10 rounded-full text-purple-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 border ${
-              point.isCircleClicked ? "bg-green-500" : "border-indigo-500"
-            }`}
-            onClick={() => toggleCircleClick(point.id)}
-          >
-            {point.isCircleClicked ? (
-              <svg
-                className="fill-current text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="10"
-              >
-                <path
-                  fillRule="nonzero"
-                  d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.a.916.a.916.916.a.916.916 0 0 0 1.296 0l6.415-6.416a.916.a.916.a.916.a.916.a.916.916.916.916.916 0 0 0-1.296-1.296Z"
-                />
-              </svg>
-            ) : null}
-          </div>
+    <div className="mx-auto overflow-x-auto mr-12 ml-12 py-10 px-10 mt-12">
+      <ol
+        className="border-l border-neutral-300 dark:border-indigo-500 md:flex md:justify-center md:gap-6 md:border-l-0 md:border-t mt-8"
+        style={lineStyle}
+      >
+        {points.map((point, index) => (
+          <li key={point.id}>
+            <div className="flex-start flex items-center pt-2 md:block md:pt-0 ">
+              <div
+                className={`-ml-1 mr-3 h-6 w-6 rounded-full border ${
+                  point.isCircleClicked
+                    ? "bg-green-500"
+                    : "border-indigo-300 dark:border-indigo-500"
+                } md:-mt-[12px] sm:mr-[5px] sm:-ml-3 md:ml-0 md:mr-0`}
+                onClick={() => toggleCircleClick(point.id)}
+              ></div>
 
-          <div
-            className={`w-full md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border-slate-200 shadow`}
-          >
-            <div className="flex flex-col space-y-2">
-              <div>
-                <div className={`font-bold text-slate-900`}>{point.title}</div>
-              </div>
-              <time className="font-caveat font-medium text-indigo-500">
-                08/06/2023
-              </time>
-              <div className="text-slate-500">{point.description}</div>
+              <p className="mt-2 text-sm text-indigo-500 font-bold">
+                {point.date}
+              </p>
             </div>
-          </div>
-        </div>
-      ))}
+            <div className="ml-4 mt-2 pb-5 md:ml-0">
+              <h4 className="mb-1.5 text-xl font-semibold">{point.title}</h4>
+              <p className="mb-3 text-neutral-500 dark:text-neutral-300">
+                {point.description}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 };

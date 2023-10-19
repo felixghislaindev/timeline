@@ -54,12 +54,12 @@ const TimelineTabs: React.FC<TimelineTabsProps> = ({
     ));
   };
   return (
-    <div className="md:w-3/4 md:ml-4 py-4 px-4 mr-4">
+    <div className="md:ml-8 py-4 px-4 ml-14">
       {/* tabs */}
 
       <div>
         {points.length === 0 ? (
-          <p className="text-lg text-gray-300 font-semibold my-4">
+          <p className="text-lg text-gray-300 font-semibold my-4 ">
             No timeline data available. Create your timeline now!
           </p>
         ) : (
