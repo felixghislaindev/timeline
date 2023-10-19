@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Certainly! Here's an updated README with the "Customizing Colors" section removed and a section for adding a screenshot:
+
+# Timeline App
+
+The Timeline app is a web application that allows you to create and customize timelines. Timelines are a visual representation of events or points in time, often used to showcase a series of events in a chronological order. With this app, you can easily create, configure, and manage your own timeline.
+
+## Features
+
+- **Create Timelines:** Add new timeline points with titles, descriptions, and order.
+
+- **Reorder Timeline Points:** Change the order of timeline points to rearrange your events.
+
+- **Delete Timeline Points:** Remove unwanted events from your timeline.
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the Repository:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```
+   git clone https://github.com/felixghislaindev/timeline.git
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install Dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```
+   cd timeline-app
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Run the App:**
 
-## Learn More
+   ```
+   npm start
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Open in your Browser:** The app should be running at `http://localhost:3000`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Adding Timeline Points:** Click the "Add" button to create a new timeline point. Fill in the title, description, and the order you want it to appear in the timeline.
 
-## Deploy on Vercel
+2. **Reordering Timeline Points:** In the timeline configuration section, use the "Item Position" dropdown to change the order of timeline points.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Deleting Timeline Points:** In the timeline configuration section, click the trash bin icon to delete a timeline point.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. **Viewing Your Timeline:** Scroll down to see your timeline. Click on the circular points to toggle their click state and highlight them.
+
+5. **Responsive Design:** The app is responsive and adapts to different screen sizes.
+
+6. **Empty Timeline Message:** If you don't have any timeline points, you'll see a message indicating that you can create your timeline.
+
+## Screenshot
+
+![Timeline](/public/Timelinelanding.png)
+
+![Timeline](/public/TimelinePoints.png)
+
+![Timeline](/public/TimelineComplete.png)
+
+## Technologies Used
+
+- React: A JavaScript library for building user interfaces.
+- React-Tabs: A library for creating tabbed content.
+- Tailwind CSS: A utility-first CSS framework.
+- FontAwesome Icons: For displaying the delete icon.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to the Timeline app, please follow our [contribution guidelines](CONTRIBUTING.md).
+
+## License
+
+This app is open-source and available under the [MIT License](LICENSE).
+
+---
