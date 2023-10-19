@@ -6,3 +6,7 @@ export interface TimelinePoint {
   isCircleClicked: boolean;
   order: number;
 }
+export interface TimelineProps {
+  points: TimelinePoint[];
+  toggleCircleClick: (pointId: string) => void;
+}

@@ -18,10 +18,22 @@ const TimelineBuilder = () => {
     };
     setPoints((prevPoints) => [...prevPoints, newPoint]);
   };
+  const handleToggleCircleClick = (pointId: string) => {
+    setPoints((prevPoints) =>
+      prevPoints.map((point) =>
+        point.id === pointId
+          ? {
+              ...point,
+              isCircleClicked: !point.isCircleClicked,
+            }
+          : point
+      )
+    );
+  };
 
   return (
     <div>
-      <Timeline />
+      <Timeline points={points} toggleCircleClick={handleToggleCircleClick} />
       <TimelineTabs />
     </div>
   );
