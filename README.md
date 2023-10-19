@@ -51,11 +51,11 @@ The Timeline app is a web application that allows you to create and customize ti
 
 ## Screenshot
 
-![Timeline](/public/Timelinelanding.png)
+![Timeline](/public/Timelinelandings.png)
 
-![Timeline](/public/TimelinePoints.png)
+![Timeline](/public/Timelinehorizontall.png)
 
-![Timeline](/public/TimelineComplete.png)
+![Timeline](/public/Timelinecompleted.png)
 
 ## Technologies Used
 

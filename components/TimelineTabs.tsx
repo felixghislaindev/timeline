@@ -73,7 +73,7 @@ const TimelineTabs: React.FC<TimelineTabsProps> = ({
                 {points.map((point) => (
                   <Tab key={point.id}>
                     <div className="flex items-center">
-                      <span className="text-indigo-600 font-semibold transition duration-200 hover:text-red-600">
+                      <span className="text-indigo-600 font-semibold transition duration-200 ">
                         {point.title}
                       </span>
                       <button
