@@ -15,7 +15,7 @@ const Timeline: React.FC<TimelineProps> = ({ points, toggleCircleClick }) => {
           <li key={point.id}>
             <div className="flex-start flex items-center pt-2 md:block md:pt-0 ">
               <div
-                className={`-ml-1 mr-3 h-6 w-6 rounded-full border ${
+                className={`-ml-3 mr-3 h-6 w-6 rounded-full border ${
                   point.isCircleClicked
                     ? "bg-green-500"
                     : "border-indigo-300 dark:border-indigo-500"
