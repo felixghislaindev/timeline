@@ -69,7 +69,7 @@ const TimelineBuilder = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row gap-3 items-center justify-center py-4 px-4 overflow-auto">
+    <div className="min-h-screen flex flex-col md:flex-row gap-3 items-center justify-center py-4 px-4">
       <Timeline points={points} toggleCircleClick={handleToggleCircleClick} />
       <TimelineTabs
         points={points}
